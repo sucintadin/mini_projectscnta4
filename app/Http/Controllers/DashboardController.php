@@ -50,6 +50,10 @@ class DashboardController extends Controller
             ->orderBy('products_count', 'desc')
             ->get();
 
+        // P4 Sales metrics
+        $totalSalesRevenue = \App\Models\Sale::select(DB::raw('SUM(quantity * unit_price) as rev'))->value('rev') ?? 0;
+        $totalSalesCount = \App\Models\Sale::count();
+
         return view('dashboard.index', compact(
             'totalProducts',
             'totalCategories',
@@ -59,7 +63,9 @@ class DashboardController extends Controller
             'outOfStockCount',
             'stockAlertItems',
             'latestProducts',
-            'categorySummary'
+            'categorySummary',
+            'totalSalesRevenue',
+            'totalSalesCount'
         ));
     }
 }

@@ -118,6 +118,12 @@
                         <i class="fa-solid fa-tags text-garden-600"></i>
                         <span>Kategori</span>
                     </a>
+
+                    <a href="{{ route('sales.index') }}" 
+                       class="px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center space-x-2 {{ request()->routeIs('sales.*') ? 'bg-garden-50 text-garden-800 shadow-sm border border-garden-200' : 'text-slate-600 hover:text-garden-700 hover:bg-slate-50' }}">
+                        <i class="fa-solid fa-receipt text-garden-600"></i>
+                        <span>Penjualan (P4)</span>
+                    </a>
                 </nav>
 
                 <!-- Action Button -->

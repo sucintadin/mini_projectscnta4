@@ -25,7 +25,11 @@
                 </a>
                 <a href="{{ route('products.index') }}" class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-medium px-5 py-2.5 rounded-xl border border-white/20 transition-all text-sm">
                     <i class="fa-solid fa-boxes-stacked"></i>
-                    <span>Lihat Semua Produk ({{ $totalProducts }})</span>
+                    <span>Katalog Tanaman ({{ $totalProducts }})</span>
+                </a>
+                <a href="{{ route('sales.index') }}" class="inline-flex items-center space-x-2 bg-emerald-800/80 hover:bg-emerald-700/80 backdrop-blur-md text-emerald-100 font-medium px-5 py-2.5 rounded-xl border border-emerald-400/30 transition-all text-sm">
+                    <i class="fa-solid fa-receipt text-emerald-300"></i>
+                    <span>Penjualan P4 ({{ $totalSalesCount }} trx &bull; Rp {{ number_format($totalSalesRevenue, 0, ',', '.') }})</span>
                 </a>
             </div>
         </div>
