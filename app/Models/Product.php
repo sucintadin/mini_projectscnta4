@@ -68,6 +68,20 @@ class Product extends Model
     }
 
     /**
+     * Get image URL (handles both full HTTP URLs and local public assets)
+     */
+    public function getImageUrlAttribute(?string $value): ?string
+    {
+        if (!$value) {
+            return null;
+        }
+        if (str_starts_with($value, 'http://') || str_starts_with($value, 'https://')) {
+            return $value;
+        }
+        return asset($value);
+    }
+
+    /**
      * Formatted price in IDR
      */
     public function getFormattedPriceAttribute(): string
